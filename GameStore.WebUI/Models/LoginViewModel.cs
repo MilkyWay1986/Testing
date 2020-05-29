@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameStore.WebUI.Models
-{
-    public class LoginViewModel
-    {
+namespace GameStore.WebUI.Models {
+    public class LoginViewModel {
         [Required]
         public string UserName { get; set; }
 

@@ -110,7 +110,6 @@
     <Compile Include="CartTest.cs" />
     <Compile Include="AdminSecurityTests.cs" />
     <Compile Include="ImageTests.cs" />
-    <Compile Include="SystemTesting.cs" />
     <Compile Include="UnitTests\CRUDCategiry.cs" />
     <Compile Include="UnitTests\Filtering.cs" />
     <Compile Include="UnitTests\SplitPage.cs" />
@@ -128,12 +127,6 @@
       <Project>{cc02d4f4-5335-42fd-9df7-e381950e1aa4}</Project>
       <Name>GameStore.WebUI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\packages\Selenium.Mozilla.Firefox.Webdriver.0.6.0.1\driver\wires-0.6.0-win.exe">
-      <Link>wires-0.6.0-win.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

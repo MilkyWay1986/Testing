@@ -1,21 +1,18 @@
-﻿using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using GameStore.WebUI.Controllers;
+﻿using GameStore.WebUI.Controllers;
 using GameStore.WebUI.Infrastructure.Abstract;
 using GameStore.WebUI.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System.Web.Mvc;
 
-namespace GameStore.UnitTests
-{
+namespace GameStore.UnitTests {
     [TestClass]
-    public class AdminSecurityTests
-    {
+    public class AdminSecurityTests {
         [TestMethod]
-        public void Try_Login_With_Good_Credentials()
-        {
+        public void Try_Login_With_Good_Credentials () {
             // Организация - создание имитации поставщика аутентификации
             Mock<IAuthProvider> mock = new Mock<IAuthProvider>();
-            mock.Setup(m => m.Authenticate("admin", "1")).Returns(true);
+            mock.Setup( m => m.Authenticate( "admin", "1" ) ).Returns( true );
 
             // Организация - создание модели представления
             // с правильными учетными данными
@@ -32,16 +29,15 @@ namespace GameStore.UnitTests
             ActionResult result = target.Login(model, "/MyURL");
 
             // Утверждение
-            Assert.IsInstanceOfType(result, typeof(RedirectResult));
-            Assert.AreEqual("/MyURL", ((RedirectResult)result).Url);
+            Assert.IsInstanceOfType( result, typeof( RedirectResult ) );
+            Assert.AreEqual( "/MyURL", ( ( RedirectResult )result ).Url );
         }
 
         [TestMethod]
-        public void Try_Login_With_Bad_Credentials()
-        {
+        public void Try_Login_With_Bad_Credentials () {
             // Организация - создание имитации поставщика аутентификации
             Mock<IAuthProvider> mock = new Mock<IAuthProvider>();
-            mock.Setup(m => m.Authenticate("hacker", "123")).Returns(false);
+            mock.Setup( m => m.Authenticate( "hacker", "123" ) ).Returns( false );
 
             // Организация - создание модели представления
             // с некорректными учетными данными
@@ -58,8 +54,8 @@ namespace GameStore.UnitTests
             ActionResult result = target.Login(model, "/MyURL");
 
             // Утверждение
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            Assert.IsFalse(((ViewResult)result).ViewData.ModelState.IsValid);
+            Assert.IsInstanceOfType( result, typeof( ViewResult ) );
+            Assert.IsFalse( ( ( ViewResult )result ).ViewData.ModelState.IsValid );
         }
     }
 }

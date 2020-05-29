@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using GameStore.Domain.Abstract;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using GameStore.Domain.Abstract;
 
-namespace GameStore.WebUI.Controllers
-{
-    public class NavController : Controller
-    {
+namespace GameStore.WebUI.Controllers {
+    public class NavController : Controller {
         private IGameRepository repository;
 
-        public NavController(IGameRepository repo)
-        {
+        public NavController ( IGameRepository repo ) {
             repository = repo;
         }
 
-        public PartialViewResult Menu(string category = null)
-        {
+        public PartialViewResult Menu ( string category = null ) {
             ViewBag.SelectedCategory = category;
 
             IEnumerable<string> categories = repository.Games
@@ -23,7 +19,7 @@ namespace GameStore.WebUI.Controllers
                 .Distinct()
                 .OrderBy(x => x);
 
-            return PartialView("FlexMenu", categories);
+            return PartialView( "FlexMenu", categories );
         }
-	}
+    }
 }

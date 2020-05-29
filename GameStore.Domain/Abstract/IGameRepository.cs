@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using GameStore.Domain.Entities;
+﻿using GameStore.Domain.Entities;
+using System.Collections.Generic;
 
-namespace GameStore.Domain.Abstract
-{
-    public interface IGameRepository
-    {
+namespace GameStore.Domain.Abstract {
+    public interface IGameRepository {
         IEnumerable<Game> Games { get; }
-        void SaveGame(Game game);
-        Game DeleteGame(int gameId);
+        void SaveGame ( Game game );
+        Game DeleteGame ( int gameId );
     }
 }

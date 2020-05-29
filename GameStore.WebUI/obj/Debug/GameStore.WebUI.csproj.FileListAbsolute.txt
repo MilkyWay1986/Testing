@@ -110,6 +110,7 @@ C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.Web
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\bin\System.Web.Webpages.Razor.xml
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\bin\System.Web.Helpers.xml
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\bin\System.Web.Mvc.xml
+C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\obj\Debug\GameStore.WebUI.csprojAssemblyReference.cache
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\obj\Debug\GameStore.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\obj\Debug\GameStore.WebUI.csproj.CopyComplete
 C:\Users\DEVELOP\Desktop\STADY\testing\Game_Store_ASP_DOT_NET_MVC5\GameStore.WebUI\obj\Debug\GameStore.WebUI.dll

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using GameStore.Domain.Abstract;
+using GameStore.Domain.Entities;
+using GameStore.WebUI.Controllers;
+using GameStore.WebUI.HtmlHelpers;
+using GameStore.WebUI.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using GameStore.Domain.Abstract;
-using GameStore.Domain.Entities;
-using GameStore.WebUI.Controllers;
-using GameStore.WebUI.Models;
-using GameStore.WebUI.HtmlHelpers;
 
 namespace GameStore.UnitTests {
 

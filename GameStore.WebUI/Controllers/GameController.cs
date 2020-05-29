@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using GameStore.Domain.Abstract;
+﻿using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
 using GameStore.WebUI.Models;
+using System.Linq;
+using System.Web.Mvc;
 
-namespace GameStore.WebUI.Controllers
-{
-    public class GameController : Controller
-    {
+namespace GameStore.WebUI.Controllers {
+    public class GameController : Controller {
         private IGameRepository repository;
         public int pageSize = 4;
 
-        public GameController(IGameRepository repo)
-        {
+        public GameController ( IGameRepository repo ) {
             repository = repo;
         }
 
-        public ViewResult List(string category, int page = 1)
-        {
+        public ViewResult List ( string category, int page = 1 ) {
             GamesListViewModel model = new GamesListViewModel
             {
                 Games = repository.Games
@@ -38,22 +31,18 @@ namespace GameStore.WebUI.Controllers
                 },
                 CurrentCategory = category
             };
-            return View(model);
+            return View( model );
         }
 
-        public FileContentResult GetImage(int gameId)
-        {
+        public FileContentResult GetImage ( int gameId ) {
             Game game = repository.Games
                 .FirstOrDefault(g => g.GameId == gameId);
 
-            if (game != null)
-            {
-                return File(game.ImageData, game.ImageMimeType);
-            }
-            else
-            {
+            if( game != null ) {
+                return File( game.ImageData, game.ImageMimeType );
+            } else {
                 return null;
             }
         }
-	}
+    }
 }

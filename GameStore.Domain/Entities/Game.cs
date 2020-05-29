@@ -1,29 +1,27 @@
-﻿using System.Web.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
-namespace GameStore.Domain.Entities
-{
-    public class Game
-    {
-        [HiddenInput(DisplayValue=false)]
+namespace GameStore.Domain.Entities {
+    public class Game {
+        [HiddenInput( DisplayValue = false )]
         public int GameId { get; set; }
 
-        [Display(Name="Название")]
-        [Required(ErrorMessage="Пожалуйста, введите название игры")]
+        [Display( Name = "Название" )]
+        [Required( ErrorMessage = "Пожалуйста, введите название игры" )]
         public string Name { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        [Display(Name="Описание")]
-        [Required(ErrorMessage = "Пожалуйста, введите описание для игры")]
+        [DataType( DataType.MultilineText )]
+        [Display( Name = "Описание" )]
+        [Required( ErrorMessage = "Пожалуйста, введите описание для игры" )]
         public string Description { get; set; }
 
-        [Display(Name = "Категория")]
-        [Required(ErrorMessage = "Пожалуйста, укажите категорию для игры")]
+        [Display( Name = "Категория" )]
+        [Required( ErrorMessage = "Пожалуйста, укажите категорию для игры" )]
         public string Category { get; set; }
 
-        [Display(Name = "Цена (руб)")]
+        [Display( Name = "Цена (руб)" )]
         [Required]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для цены")]
+        [Range( 0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для цены" )]
         public decimal Price { get; set; }
 
         public byte[] ImageData { get; set; }

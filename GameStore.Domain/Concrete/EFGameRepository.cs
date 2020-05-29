@@ -1,34 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
-using GameStore.Domain.Abstract;
+using System.Collections.Generic;
 using System.Web;
 
-namespace GameStore.Domain.Concrete
-{
-    public class EFGameRepository : IGameRepository
-    {
+namespace GameStore.Domain.Concrete {
+    public class EFGameRepository : IGameRepository {
         EFDbContext context;
 
-        public EFGameRepository()
-        {
+        public EFGameRepository () {
             string mdfFilePath = HttpContext.Current.Server.MapPath("~/App_Data/GameStore.mdf");
-            context = new EFDbContext(string.Format(@"Data Source=.\SQLEXPRESS;AttachDbFilename={0};Integrated Security=True;User Instance=True", mdfFilePath));
+            context = new EFDbContext( string.Format( @"Data Source=.\SQLEXPRESS;AttachDbFilename={0};Integrated Security=True;User Instance=True", mdfFilePath ) );
         }
 
-        public IEnumerable<Game> Games
-        {
+        public IEnumerable<Game> Games {
             get { return context.Games; }
         }
 
-        public void SaveGame(Game game)
-        {
-            if (game.GameId == 0)
-                context.Games.Add(game);
-            else
-            {
+        public void SaveGame ( Game game ) {
+            if( game.GameId == 0 )
+                context.Games.Add( game );
+            else {
                 Game dbEntry = context.Games.Find(game.GameId);
-                if (dbEntry != null)
-                {
+                if( dbEntry != null ) {
                     dbEntry.Name = game.Name;
                     dbEntry.Description = game.Description;
                     dbEntry.Price = game.Price;
@@ -41,12 +34,10 @@ namespace GameStore.Domain.Concrete
         }
 
 
-        public Game DeleteGame(int gameId)
-        {
+        public Game DeleteGame ( int gameId ) {
             Game dbEntry = context.Games.Find(gameId);
-            if (dbEntry != null)
-            {
-                context.Games.Remove(dbEntry);
+            if( dbEntry != null ) {
+                context.Games.Remove( dbEntry );
                 context.SaveChanges();
             }
             return dbEntry;
