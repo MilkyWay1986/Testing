@@ -32,10 +32,11 @@ namespace GameStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.Games.Count() 
-                       
+                    TotalItems = category == null ?
+                        repository.Games.Count() :
+                        repository.Games.Where(game => game.Category == category).Count()
                 },
-               
+                CurrentCategory = category
             };
             return View(model);
         }

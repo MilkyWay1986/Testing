@@ -104,8 +104,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AdminTests.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CartTest.cs" />
+    <Compile Include="AdminSecurityTests.cs" />
+    <Compile Include="ImageTests.cs" />
+    <Compile Include="SystemTesting.cs" />
+    <Compile Include="UnitTests\CRUDCategiry.cs" />
     <Compile Include="UnitTests\Filtering.cs" />
     <Compile Include="UnitTests\SplitPage.cs" />
   </ItemGroup>
